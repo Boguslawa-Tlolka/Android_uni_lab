@@ -10,4 +10,8 @@
     <string name="hello">Hello!</string>
     <string name="toast">Toast</string>
     <string name="back">Back</string>
+    <string name="text">Text</string>
+    <string name="e_mail">E-mail</string>
+    <string name="number">Number</string>
+    <string name="phone">Phone</string>
 </resources>

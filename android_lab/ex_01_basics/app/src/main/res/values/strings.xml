@@ -14,4 +14,7 @@
     <string name="e_mail">E-mail</string>
     <string name="number">Number</string>
     <string name="phone">Phone</string>
+    <string name="no_picture">No picture</string>
+    <string name="visible">Text visible</string>
+    <string name="invisible">Text invisible</string>
 </resources>

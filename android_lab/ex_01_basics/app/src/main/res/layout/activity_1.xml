@@ -21,13 +21,15 @@
             android:id="@+id/personRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/person_radio" />
+            android:text="@string/person_radio"
+            android:onClick="onRadioButtonClicked" />
 
         <RadioButton
             android:id="@+id/flowerRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/flower_radio" />
+            android:text="@string/flower_radio"
+            android:onClick="onRadioButtonClicked" />
 
     </RadioGroup>
 

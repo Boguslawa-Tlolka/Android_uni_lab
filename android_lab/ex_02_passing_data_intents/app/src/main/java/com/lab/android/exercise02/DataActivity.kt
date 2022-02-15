@@ -38,10 +38,10 @@ class DataActivity : AppCompatActivity() {
             bundle.putDouble("weight", weight)
             bundle.putDouble("height", height)
 
-            /*val intent = Intent(this, BMIActivity::class.java)
+            val intent = Intent(this, BMIActivity::class.java)
             intent.putExtras(bundle)
 
-            startForResult.launch(intent)*/
+            startForResult.launch(intent)
         }
     }
 }

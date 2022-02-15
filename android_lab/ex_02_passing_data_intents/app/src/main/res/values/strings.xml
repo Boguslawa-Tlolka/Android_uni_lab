@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Exercise02</string>
+    <string name="description">Press any button to start</string>
+    <string name="author">Bogusława Tlołka</string>
+    <string name="buttons">Buttons</string>
+    <string name="bmi">BMI</string>
+    <string name="relative">Relative</string>
 </resources>

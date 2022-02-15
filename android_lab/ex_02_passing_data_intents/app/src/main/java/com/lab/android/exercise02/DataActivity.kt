@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 
@@ -31,17 +32,26 @@ class DataActivity : AppCompatActivity() {
         val heightEditText = findViewById<EditText>(R.id.heightEditText)
 
         bmiButton.setOnClickListener {
-            val weight: Double = weightEditText.text.toString().toDouble()
-            val height: Double = heightEditText.text.toString().toDouble()
 
-            val bundle = Bundle()
-            bundle.putDouble("weight", weight)
-            bundle.putDouble("height", height)
+            var weight: Double? = null
+            var height: Double? = null
 
-            val intent = Intent(this, BMIActivity::class.java)
-            intent.putExtras(bundle)
+            if (weightEditText.text.isNotEmpty() && heightEditText.text.isNotEmpty()) {
+                weight = weightEditText.text.toString().toDouble()
+                height = heightEditText.text.toString().toDouble()
+            }
+            else Toast.makeText(this, getString(R.string.empty), Toast.LENGTH_SHORT).show()
 
-            startForResult.launch(intent)
+            if (weight != null && height != null) {
+                val bundle = Bundle()
+                bundle.putDouble("weight", weight)
+                bundle.putDouble("height", height)
+
+                val intent = Intent(this, BMIActivity::class.java)
+                intent.putExtras(bundle)
+
+                startForResult.launch(intent)
+            }
         }
     }
 }

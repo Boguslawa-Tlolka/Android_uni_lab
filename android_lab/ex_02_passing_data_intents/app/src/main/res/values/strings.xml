@@ -5,4 +5,12 @@
     <string name="buttons">Buttons</string>
     <string name="bmi">BMI</string>
     <string name="relative">Relative</string>
+    <string name="person_radio">Person</string>
+    <string name="flower_radio">Flower</string>
+    <string name="hello">Hello!</string>
+    <string name="toast">Toast</string>
+    <string name="back">back</string>
+    <string name="no_picture">No picture</string>
+    <string name="visible">Text visible</string>
+    <string name="invisible">Text invisible</string>
 </resources>

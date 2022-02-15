@@ -17,4 +17,5 @@
     <string name="no_picture">No picture</string>
     <string name="visible">Text visible</string>
     <string name="invisible">Text invisible</string>
+    <string name="toast_act_2">Activity 2: Edit texts</string>
 </resources>

@@ -9,10 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Exercise02">
-        <activity android:name=".BMIActivity"></activity>
-        <activity android:name=".DataActivity" />
-        <activity android:name=".RelativeActivity" />
-        <activity android:name=".ButtonsActivity" />
+        <activity
+            android:name=".BMIActivity"
+            android:parentActivityName=".DataActivity" />
+        <activity
+            android:name=".DataActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".RelativeActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ButtonsActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

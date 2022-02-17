@@ -4,4 +4,6 @@
     <string name="settings">Settings</string>
     <string name="rate">Rate</string>
     <string name="images">Images</string>
+    <string name="invitation">Hello! Welcome in my app</string>
+    <string name="author_name">Author: Bogusława Tlołka</string>
 </resources>

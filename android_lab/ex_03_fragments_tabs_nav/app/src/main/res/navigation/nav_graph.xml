@@ -25,4 +25,14 @@
         app:destination="@id/settingsFragment"
         app:launchSingleTop="true"
         app:popUpTo="@id/settingsFragment" />
+    <fragment
+        android:id="@+id/rateFragment"
+        android:name="com.lab.android.fragments.RateFragment"
+        android:label="fragment_rate"
+        tools:layout="@layout/fragment_rate" />
+    <action
+        android:id="@+id/action_global_rateFragment"
+        app:destination="@id/rateFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/rateFragment" />
 </navigation>

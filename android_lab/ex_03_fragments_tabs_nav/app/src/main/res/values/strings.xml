@@ -6,17 +6,16 @@
     <string name="images">Images</string>
     <string name="invitation">Hello! Welcome in my app</string>
     <string name="author_name">Author: Bogusława Tlołka</string>
-    <string-array name="tabs_titles">
-        <item>User</item>
-        <item>Colors</item>
-        <item>Like</item>
-    </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>
     <string name="save">Save</string>
     <string name="color">Color</string>
     <string name="like_question">Do you like this app?</string>
     <string name="yes">Yes!</string>
+
+    <string-array name="tabs_titles">
+        <item>User</item>
+        <item>Colors</item>
+        <item>Like</item>
+    </string-array>
 </resources>

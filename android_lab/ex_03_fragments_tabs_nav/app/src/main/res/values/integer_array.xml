@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="tab_icons">
+        <item>@drawable/ic_person</item>
+        <item>@drawable/ic_colors</item>
+        <item>@drawable/ic_like_dislike</item>
+    </array>
+</resources>

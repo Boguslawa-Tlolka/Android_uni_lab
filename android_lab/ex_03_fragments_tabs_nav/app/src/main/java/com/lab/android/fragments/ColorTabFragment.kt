@@ -62,7 +62,6 @@ class ColorTabFragment : Fragment() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
                 if (seekBar != null) {
                     colorValueTextView.text = seekBar.progress.toString()
-                    parentFragmentManager.setFragmentResult("colorKey", bundleOf("bundleColor" to seekBar.progress))
                 }
             }
 

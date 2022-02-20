@@ -37,8 +37,14 @@ class ColorTabFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val backgroundColor = preferences.getInt("background_color",0)
+
         val colorSeekBar = view.findViewById<SeekBar>(R.id.colorSeekBar)
         val colorValueTextView = view.findViewById<TextView>(R.id.colorValueTextView)
+
+        colorSeekBar.progress = backgroundColor
+        colorValueTextView.text = backgroundColor.toString()
 
         colorSeekBar?.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
@@ -61,8 +67,6 @@ class ColorTabFragment : Fragment() {
             }
 
         })
-
-        val preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(requireContext())
 
         val saveButton = view.findViewById<Button>(R.id.saveButton)
         saveButton.setOnClickListener {

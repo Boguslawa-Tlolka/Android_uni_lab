@@ -32,14 +32,13 @@
 
     <TextView
         android:id="@+id/colorValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:layout_constraintStart_toEndOf="@id/colorSeekBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="0"
+        tools:background="@color/black"
         />
 
     <Button

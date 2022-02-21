@@ -1,5 +1,6 @@
 package com.lab.android.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -44,24 +45,24 @@ class ColorTabFragment : Fragment() {
         val colorValueTextView = view.findViewById<TextView>(R.id.colorValueTextView)
 
         colorSeekBar.progress = backgroundColor
-        colorValueTextView.text = backgroundColor.toString()
+        colorValueTextView.setBackgroundColor(Color.rgb(backgroundColor, 255, 255))
 
         colorSeekBar?.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
 
             override fun onProgressChanged(seek: SeekBar, progress: Int, fromUser: Boolean) {
-                colorValueTextView.text = progress.toString()
+                colorValueTextView.setBackgroundColor(Color.rgb(progress, 255, 255))
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
                 if (seekBar != null) {
-                    colorValueTextView.text = seekBar.progress.toString()
+                    colorValueTextView.setBackgroundColor(Color.rgb(seekBar.progress, 255, 255))
                 }
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
                 if (seekBar != null) {
-                    colorValueTextView.text = seekBar.progress.toString()
+                    colorValueTextView.setBackgroundColor(Color.rgb(seekBar.progress, 255, 255))
                 }
             }
 

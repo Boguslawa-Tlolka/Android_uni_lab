@@ -19,8 +19,16 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val buttonText: Button = view.findViewById(R.id.textsButton)
-        val buttonImage: Button = view.findViewById(R.id.imagesButton)
+        val textsButton: Button = view.findViewById(R.id.textsButton)
+        val imagesButton: Button = view.findViewById(R.id.imagesButton)
+
+        textsButton.setOnClickListener {
+            view.findNavController().navigate(R.id.action_nav_home_to_nav_texts)
+        }
+
+        imagesButton.setOnClickListener {
+            view.findNavController().navigate(R.id.action_nav_home_to_nav_images)
+        }
 
     }
 

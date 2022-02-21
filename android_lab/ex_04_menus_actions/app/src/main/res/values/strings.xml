@@ -16,4 +16,7 @@
     <string name="small">Small</string>
     <string name="medium">Medium</string>
     <string name="large">Large</string>
+    <string name="flower">Flower</string>
+    <string name="sun">Sun</string>
+    <string name="fire">Fire</string>
 </resources>

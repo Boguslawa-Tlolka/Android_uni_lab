@@ -35,4 +35,14 @@
         app:destination="@id/rateFragment"
         app:launchSingleTop="true"
         app:popUpTo="@id/rateFragment" />
+    <fragment
+        android:id="@+id/imagesFragment"
+        android:name="com.lab.android.fragments.ImagesFragment"
+        android:label="fragment_images"
+        tools:layout="@layout/fragment_images" />
+    <action
+        android:id="@+id/action_global_imagesFragment"
+        app:destination="@id/imagesFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/imagesFragment" />
 </navigation>

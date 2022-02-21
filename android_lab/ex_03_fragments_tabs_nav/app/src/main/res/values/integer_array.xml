@@ -5,4 +5,9 @@
         <item>@drawable/ic_colors</item>
         <item>@drawable/ic_like_dislike</item>
     </array>
+    <array name="gallery_images">
+        <item>@drawable/ic_welcome</item>
+        <item>@drawable/ic_heart</item>
+        <item>@drawable/ic_snowflake</item>
+    </array>
 </resources>

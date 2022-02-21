@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.item1 -> navController.navigate(R.id.action_global_mainFragment)
                 R.id.item2 -> navController.navigate(R.id.action_global_settingsFragment)
                 R.id.item3 -> navController.navigate(R.id.action_global_rateFragment)
-                R.id.item4 -> TODO()
+                R.id.item4 -> navController.navigate(R.id.action_global_imagesFragment)
             }
             true
         }

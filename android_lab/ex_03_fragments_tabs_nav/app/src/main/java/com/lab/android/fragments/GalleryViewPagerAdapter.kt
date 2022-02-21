@@ -4,7 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class GalleryViewPagerAdapter(fg: Fragment): FragmentStateAdapter(fg) {
-    val IMAGES_COUNT = 3
+
+    private val IMAGES_COUNT = 3
 
     override fun getItemCount(): Int {
         return IMAGES_COUNT

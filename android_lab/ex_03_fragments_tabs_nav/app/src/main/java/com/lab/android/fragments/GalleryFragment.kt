@@ -46,10 +46,9 @@ class GalleryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val imageView: ImageView = view.findViewById(R.id.galleryImageView)
-        if (param1 != null) {
-            imageView.setImageResource(imageIDs[param1!!])
-        }
+        imageView.setImageResource(imageIDs[param1!!])
 
         imageView.setOnClickListener {
             val result = param1

@@ -15,19 +15,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class SettingsFragment : Fragment() {
-
-    private var param1: String? = null
-    private var param2: String? = null
-
-   /* private val tabIcons = arrayOf(
-        R.drawable.ic_person,
-        R.drawable.ic_colors,
-        R.drawable.ic_like_dislike
-    )*/
 
     private lateinit var tabTitles: Array<String>
     private lateinit var tabIcons: TypedArray
@@ -35,14 +23,6 @@ class SettingsFragment : Fragment() {
     private lateinit var viewPagerAdapter: ViewPagerAdapter
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,7 +34,7 @@ class SettingsFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        tabIcons = requireActivity().resources.obtainTypedArray(R.array.tab_icons)//getIntArray(R.array.tab_icons)
+        tabIcons = requireActivity().resources.obtainTypedArray(R.array.tab_icons)
         tabTitles = requireActivity().resources.getStringArray(R.array.tabs_titles)
     }
 
@@ -73,12 +53,6 @@ class SettingsFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SettingsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = SettingsFragment()
     }
 }

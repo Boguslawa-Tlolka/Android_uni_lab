@@ -12,21 +12,7 @@ import android.widget.TextView
 import androidx.core.content.edit
 import androidx.core.os.bundleOf
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class ColorTabFragment : Fragment() {
-
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +25,7 @@ class ColorTabFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val backgroundColor = preferences.getInt("background_color",0)
+        val backgroundColor = preferences.getInt("background_color", 0)
 
         val colorSeekBar = view.findViewById<SeekBar>(R.id.colorSeekBar)
         val colorValueTextView = view.findViewById<TextView>(R.id.colorValueTextView)
@@ -65,7 +51,6 @@ class ColorTabFragment : Fragment() {
                     colorValueTextView.setBackgroundColor(Color.rgb(seekBar.progress, 255, 255))
                 }
             }
-
         })
 
         val saveButton = view.findViewById<Button>(R.id.saveButton)
@@ -78,12 +63,6 @@ class ColorTabFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ColorTabFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = ColorTabFragment()
     }
 }

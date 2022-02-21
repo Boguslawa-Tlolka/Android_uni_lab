@@ -12,13 +12,11 @@
     <string name="color">Color</string>
     <string name="like_question">Do you like this app?</string>
     <string name="yes">Yes!</string>
+    <string name="rate_app">Rate this app!</string>
 
     <string-array name="tabs_titles">
         <item>User</item>
-        <item>Colors</item>
+        <item>Color</item>
         <item>Like</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="rate_app">Rate this app!</string>
 </resources>

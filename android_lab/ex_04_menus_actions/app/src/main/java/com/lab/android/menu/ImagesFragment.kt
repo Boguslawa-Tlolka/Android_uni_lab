@@ -26,17 +26,17 @@ class ImagesFragment : Fragment() {
 
         override fun onActionItemClicked(p0: ActionMode, p1: MenuItem): Boolean {
             return when (p1.itemId) {
-                R.id.red -> {
+                R.id.contextRed -> {
                     backgroundImageView.setBackgroundColor(Color.RED)
                     p0.finish()
                     true
                 }
-                R.id.blue -> {
+                R.id.contextBlue -> {
                     backgroundImageView.setBackgroundColor(Color.BLUE)
                     p0.finish()
                     true
                 }
-                R.id.green -> {
+                R.id.contextGreen -> {
                     backgroundImageView.setBackgroundColor(Color.GREEN)
                     p0.finish()
                     true

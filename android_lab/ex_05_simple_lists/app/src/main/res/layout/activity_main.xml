@@ -6,13 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/simpleListButton"
+        android:text="@string/simple_list"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/multipleChoiceListButton"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <Button
+        android:id="@+id/multipleChoiceListButton"
+        android:text="@string/multiple_choice_list"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/simpleListButton"
+        app:layout_constraintBottom_toTopOf="@id/gridButton"/>
+
+    <Button
+        android:id="@+id/gridButton"
+        android:text="@string/grid"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/multipleChoiceListButton"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

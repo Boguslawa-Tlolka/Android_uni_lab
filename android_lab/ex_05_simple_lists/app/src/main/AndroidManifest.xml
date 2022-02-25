@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleLists">
-        <activity android:name=".SimpleListActivity"></activity>
+        <activity android:name=".MultipleChoiceActivity"></activity>
+        <activity android:name=".SimpleListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

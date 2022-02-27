@@ -1,11 +1,10 @@
 package com.lab.android.database
 
+import android.app.AlertDialog
 import android.graphics.Color
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.core.graphics.blue
@@ -51,6 +50,9 @@ class UpdateFragment : Fragment() {
         view.updateButton.setOnClickListener {
             updateItem()
         }
+
+        setHasOptionsMenu(true)
+
         return view
     }
 
@@ -78,6 +80,32 @@ class UpdateFragment : Fragment() {
 
     private fun inputCheck(plantName: String, plantPlace: String): Boolean {
         return !(plantName.isEmpty() && plantPlace.isEmpty())
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_delete){
+            deletePlant()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deletePlant() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") { _, _ ->
+            plantViewModel.deletePlant(args.currentPlant)
+            Toast.makeText(requireContext(), "${args.currentPlant.name} deleted!", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+        }
+        builder.setNegativeButton("No") {_, _ ->
+
+        }
+        builder.setTitle("Delete ${args.currentPlant.name}")
+        builder.setMessage("Are you sure you want to delete ${args.currentPlant.name}?")
+        builder.create().show()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

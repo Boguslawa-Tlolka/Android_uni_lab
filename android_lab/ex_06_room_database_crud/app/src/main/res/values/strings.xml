@@ -9,4 +9,6 @@
     <string name="house">House</string>
     <string name="garden">Garden</string>
     <string name="add">Add</string>
+    <string name="update">Update</string>
+    <string name="update_plant">Update plant</string>
 </resources>

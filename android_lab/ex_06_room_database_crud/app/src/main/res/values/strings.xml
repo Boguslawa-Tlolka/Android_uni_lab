@@ -2,4 +2,11 @@
     <string name="app_name">Database</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_plant">Add plant</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="place">Place</string>
+    <string name="house">House</string>
+    <string name="garden">Garden</string>
+    <string name="add">Add</string>
 </resources>

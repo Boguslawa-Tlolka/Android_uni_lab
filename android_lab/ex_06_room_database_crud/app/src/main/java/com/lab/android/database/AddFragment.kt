@@ -1,59 +1,147 @@
 package com.lab.android.database
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_add.*
+import kotlinx.android.synthetic.main.fragment_add.view.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AddFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AddFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var plantViewModel: PlantViewModel
+    private var red = 255
+    private var green = 0
+    private var blue = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add, container, false)
+        val view = inflater.inflate(R.layout.fragment_add, container, false)
+        plantViewModel = ViewModelProvider(this).get(PlantViewModel::class.java)
+        view.addButton.setOnClickListener {
+            insertDataToDatabase()
+        }
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AddFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AddFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var color: Int
+
+        redSeekBar.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+
+            override fun onProgressChanged(seek: SeekBar, progress: Int, fromUser: Boolean) {
+                red = progress
+                color = Color.rgb(red,green,blue)
+                colorTextView.setBackgroundColor(color)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                if (seekBar != null) {
+                    red = seekBar.progress
+                    color = Color.rgb(red,green,blue)
+                    colorTextView.setBackgroundColor(color)
                 }
             }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                if (seekBar != null) {
+                    red = seekBar.progress
+                    color = Color.rgb(red,green,blue)
+                    colorTextView.setBackgroundColor(color)
+                }
+            }
+
+        })
+
+        greenSeekBar.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+
+            override fun onProgressChanged(seek: SeekBar, progress: Int, fromUser: Boolean) {
+                green = progress
+                color = Color.rgb(red,green,blue)
+                colorTextView.setBackgroundColor(color)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                if (seekBar != null) {
+                    green = seekBar.progress
+                    color = Color.rgb(red,green,blue)
+                    colorTextView.setBackgroundColor(color)
+                }
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                if (seekBar != null) {
+                    green = seekBar.progress
+                    color = Color.rgb(red,green,blue)
+                    colorTextView.setBackgroundColor(color)
+                }
+            }
+
+        })
+
+        blueSeekBar.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+
+            override fun onProgressChanged(seek: SeekBar, progress: Int, fromUser: Boolean) {
+                blue = progress
+                color = Color.rgb(red,green,blue)
+                colorTextView.setBackgroundColor(color)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                if (seekBar != null) {
+                    blue = seekBar.progress
+                    color = Color.rgb(red,green,blue)
+                    colorTextView.setBackgroundColor(color)
+                }
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                if (seekBar != null) {
+                    blue = seekBar.progress
+                    color = Color.rgb(red,green,blue)
+                    colorTextView.setBackgroundColor(color)
+                }
+            }
+
+        })
+    }
+
+    private fun insertDataToDatabase() {
+        val plantName = nameOutlinedTextField.editText?.text.toString()
+        val plantAge = ageOutlinedTextField.editText?.text.toString().toInt()
+
+        val checkedHouse = houseRadioButton.isChecked
+        val checkedGarden = gardenRadioButton.isChecked
+        var place = ""
+        if (checkedHouse) place = getString(R.string.house)
+        if (checkedGarden) place = getString(R.string.garden)
+
+        val plantColor = Color.rgb(red, green, blue)
+
+        if (inputCheck(plantName, place)) {
+            val newPlant = Plant(0, plantName, plantAge, place, plantColor)
+            plantViewModel.addPlant(newPlant)
+            Toast.makeText(requireContext(), "$plantName added!", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+        }
+        else{
+            Toast.makeText(requireContext(), "Fill out name and place!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun inputCheck(plantName: String, place: String): Boolean {
+        return !(plantName.isEmpty() && place.isEmpty())
     }
 }

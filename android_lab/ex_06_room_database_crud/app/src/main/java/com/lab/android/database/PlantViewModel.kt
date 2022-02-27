@@ -9,13 +9,13 @@ import kotlinx.coroutines.launch
 
 class PlantViewModel(application: Application): AndroidViewModel(application) {
 
-    val readAllData: LiveData<List<Plant>>
+    val readAllPlants: LiveData<List<Plant>>
     private val repository: PlantRepository
 
     init {
         val plantDao = PlantDatabase.getDatabase(application).plantDao()
         repository = PlantRepository(plantDao)
-        readAllData = repository.readAllData
+        readAllPlants = repository.readAllPlants
     }
 
     fun addPlant(plant: Plant){

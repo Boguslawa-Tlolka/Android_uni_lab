@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 
 class PlantRepository (private val plantDao: PlantDao) {
 
-    val readAllData: LiveData<List<Plant>> = plantDao.readAllPlants()
+    val readAllPlants: LiveData<List<Plant>> = plantDao.readAllPlants()
 
     suspend fun addPlant(plant: Plant){
         plantDao.addPlant(plant)

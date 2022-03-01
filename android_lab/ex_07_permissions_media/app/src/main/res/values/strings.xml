@@ -3,4 +3,8 @@
     <string name="record_audio">Record audio</string>
     <string name="play_video">Play video</string>
     <string name="record_video">Record video</string>
+    <string name="start_rec">Start rec</string>
+    <string name="stop_rec">Stop rec</string>
+    <string name="play_rec">Play rec</string>
+    <string name="stop_play">Stop play</string>
 </resources>

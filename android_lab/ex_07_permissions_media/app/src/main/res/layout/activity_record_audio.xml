@@ -6,4 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".RecordAudioActivity">
 
+    <Button
+        android:id="@+id/startRecButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/start_rec"
+        app:layout_constraintBottom_toTopOf="@id/playRecButton"
+        app:layout_constraintEnd_toStartOf="@id/stopRecButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/stopRecButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_rec"
+        app:layout_constraintBottom_toTopOf="@id/stopPlayButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/startRecButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/playRecButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/play_rec"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/stopPlayButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startRecButton" />
+
+    <Button
+        android:id="@+id/stopPlayButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/playRecButton"
+        app:layout_constraintTop_toBottomOf="@id/stopRecButton" />
+
+    <SeekBar
+        android:id="@+id/audioSeekBar"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
